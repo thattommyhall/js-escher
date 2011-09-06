@@ -1,0 +1,2655 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>javascript == scheme</title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///Library/Python/2.6/site-packages/landslide-0.8.2-py2.6.egg/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///Library/Python/2.6/site-packages/landslide-0.8.2-py2.6.egg/landslide/themes/default/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///Library/Python/2.6/site-packages/landslide-0.8.2-py2.6.egg/landslide/themes/default/js/slides.js"></script>
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>javascript == scheme</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>JS: The Best Parts</h1></header>
+            
+            
+            <section><ul>
+<li>First class functions</li>
+<li>Closures</li>
+<li>Prototypes</li>
+<li>obj = {p:1, q:2, r:3}</li>
+<li>arr = ["hi, "there"]</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>JavaScript == Scheme</h1></header>
+            
+            
+            <section><ul>
+<li>First Class Functions</li>
+<li>Closures</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>JavaScript !== scheme</h1></header>
+            
+            
+            <section><ul>
+<li>Prototypes?</li>
+<li>Object Literals</li>
+<li>Arrays (have cons cells in scheme though)</li>
+<li>No TCO</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>On JavaScript</h1></header>
+            
+            
+            <section><p><strong>The part that is good is not original, and the part that is original is not good</strong></p>
+<p><strong>I was recruited to Netscape with the promise of “doing Scheme” in the browser... previously, at SGI, Nick Thompson had turned me on to SICP.</strong><br />
+ - Brendan Eich </p>
+<p><strong>JavaScript derives much of what power it has from closures</strong> <br />
+- @fogus, The Joy Of Clojure</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>With good functions, you dont need much else</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>You don't need: Classes</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">mammal</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">spec</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="nx">that</span><span class="p">.</span><span class="nx">get_name</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span>  <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">name</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="nx">that</span><span class="p">.</span><span class="nx">says</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span>  <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span> <span class="o">||</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+    <span class="p">};</span>
+
+    <span class="k">return</span> <span class="nx">that</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">myMammal</span> <span class="o">=</span> <span class="nx">mammal</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Herb&#39;</span><span class="p">});</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>You don't need: Inheritance</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">cat</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">spec</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span> <span class="o">=</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">saying</span> <span class="o">||</span> <span class="s1">&#39;meow&#39;</span><span class="p">;</span>
+    <span class="kd">var</span> <span class="nx">that</span> <span class="o">=</span> <span class="nx">mammal</span><span class="p">(</span><span class="nx">spec</span><span class="p">);</span>
+    <span class="nx">that</span><span class="p">.</span><span class="nx">purr</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+        <span class="kd">var</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">s</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">n</span><span class="p">;</span> <span class="nx">i</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">s</span> <span class="o">+=</span> <span class="s1">&#39;-&#39;</span><span class="p">;</span>
+            <span class="p">}</span>
+            <span class="nx">s</span> <span class="o">+=</span> <span class="s1">&#39;r&#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="nx">s</span><span class="p">;</span>
+    <span class="p">};</span>
+    <span class="nx">that</span><span class="p">.</span><span class="nx">get_name</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span>  <span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">that</span><span class="p">.</span><span class="nx">says</span><span class="p">(</span>  <span class="p">)</span> <span class="o">+</span> <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">spec</span><span class="p">.</span><span class="nx">name</span> <span class="o">+</span>
+                <span class="s1">&#39; &#39;</span> <span class="o">+</span> <span class="nx">that</span><span class="p">.</span><span class="nx">says</span><span class="p">(</span>  <span class="p">);</span>
+    <span class="k">return</span> <span class="nx">that</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">myCat</span> <span class="o">=</span> <span class="nx">cat</span><span class="p">({</span><span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;Henrietta&#39;</span><span class="p">});</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>You don't need: Variables</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">factorial1</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">result</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="k">while</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">result</span> <span class="o">*=</span> <span class="nx">n</span><span class="p">;</span>
+    <span class="nx">n</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kd">var</span> <span class="nx">factorial2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span><span class="nx">n</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nx">result</span> <span class="o">*=</span> <span class="nx">n</span><span class="p">;</span>
+              <span class="nx">n</span> <span class="o">-=</span> <span class="mi">1</span><span class="p">;</span>
+            <span class="p">}</span> 
+            <span class="k">return</span> <span class="nx">result</span><span class="p">;</span>
+          <span class="p">}(</span><span class="mi">1</span><span class="p">));</span>           
+<span class="p">};</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>You don't need: Numbers</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">identity</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">x</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">zero</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">identity</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">succ</span><span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="nx">f</span><span class="p">(</span><span class="nx">n</span><span class="p">(</span><span class="nx">f</span><span class="p">)(</span><span class="nx">x</span><span class="p">));</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>One,Two,Three</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="c1">// one = succ(zero)</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// two = succ(one)</span>
+<span class="kd">function</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">(</span><span class="nx">x</span><span class="p">));</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Onwards to rationals, complex, negatives, arithmetic</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>You can implement objects and arrays too</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>You don't need: Recursion</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">y</span><span class="p">(</span><span class="nx">le</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">f</span><span class="p">)</span> <span class="p">{</span> 
+            <span class="k">return</span> <span class="nx">f</span><span class="p">(</span><span class="nx">f</span><span class="p">);</span>
+          <span class="p">}(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">g</span><span class="p">)</span> <span class="p">{</span>
+                  <span class="k">return</span> <span class="nx">le</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">x</span><span class="p">)</span> <span class="p">{</span>
+                              <span class="k">return</span> <span class="nx">g</span><span class="p">(</span><span class="nx">g</span><span class="p">)(</span><span class="nx">x</span><span class="p">);</span>
+                            <span class="p">});</span>
+            <span class="p">})</span>
+         <span class="p">);</span> 
+<span class="p">}</span>
+
+<span class="kd">var</span> <span class="nx">factorial3</span> <span class="o">=</span> <span class="nx">y</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">fac</span><span class="p">)</span> <span class="p">{</span>
+                     <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+                       <span class="k">return</span> <span class="nx">n</span> <span class="o">&lt;=</span> <span class="mi">2</span> <span class="o">?</span> <span class="nx">n</span> <span class="o">:</span> <span class="nx">n</span> <span class="o">*</span> <span class="nx">fac</span><span class="p">(</span><span class="nx">n</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+                     <span class="p">};</span>
+                   <span class="p">});</span>
+
+<span class="nx">factorial3</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1">// =&gt; 120!</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Closures</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>The Canonical Closure</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">counter</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">value</span><span class="p">)</span> <span class="p">{</span> 
+  <span class="kd">var</span> <span class="nx">x</span><span class="o">=</span><span class="nx">value</span><span class="p">;</span> 
+  <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">x</span><span class="o">++</span><span class="p">;};</span> 
+<span class="p">};</span>
+
+<span class="nx">counter1</span> <span class="o">=</span> <span class="nx">counter</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nx">counter2</span> <span class="o">=</span> <span class="nx">counter</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="nx">counter1</span><span class="p">()</span> <span class="c1">// =&gt; 1</span>
+<span class="nx">counter1</span><span class="p">()</span> <span class="c1">// =&gt; 2</span>
+<span class="nx">counter2</span><span class="p">()</span> <span class="c1">// =&gt; 5</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Higher Order Functions</h1></header>
+            
+            
+            <section><h2>Functions are first class</h2>
+<ol>
+<li>They can be passed as args to other functions</li>
+<li>They can be returned by other functions</li>
+<li>They can be assigned to variables or stored in data structures </li>
+</ol>
+<p>HOF use 1 and 2</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Creating A Language Of Pictures</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>How to describe Escher?</h1></header>
+            
+            
+            <section><p><img src="file:///Users/tomh/Dropbox/projects/js-escher/SquareLimit500.jpg" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Combining Pictures</h1></header>
+            
+            
+            <section><p><canvas id="combining_pictures" width="600" height="600"></canvas>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              20/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>The Code</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="c1">// combining_pictures.js</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">canvas_frame</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;combining_pictures&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas_frame</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">george</span> <span class="o">=</span> <span class="nx">segment_painter</span><span class="p">(</span><span class="nx">george_path</span><span class="p">,</span><span class="nx">context</span><span class="p">);</span>
+   <span class="nx">display</span> <span class="o">=</span> <span class="nx">square_of_four</span><span class="p">(</span><span class="nx">flip_horiz</span><span class="p">,</span><span class="nx">identity</span><span class="p">,</span>
+                            <span class="nx">rot</span><span class="p">,</span><span class="nx">flip_vert</span><span class="p">);</span>
+   <span class="nx">beside</span><span class="p">(</span><span class="nx">right_split</span><span class="p">(</span><span class="nx">george</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span>
+          <span class="nx">display</span><span class="p">(</span><span class="nx">george</span><span class="p">))(</span><span class="nx">frame1</span><span class="p">);</span>
+ <span class="p">})();</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              21/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Some Transformations</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">identity</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">p</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">below</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span><span class="nx">p2</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">rot270</span><span class="p">(</span><span class="nx">beside</span><span class="p">(</span><span class="nx">rot</span><span class="p">(</span><span class="nx">p1</span><span class="p">),</span>
+                       <span class="nx">rot</span><span class="p">(</span><span class="nx">p2</span><span class="p">)));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">rot180</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">rot</span><span class="p">(</span><span class="nx">rot</span><span class="p">(</span><span class="nx">p</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">rot270</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">rot</span><span class="p">(</span><span class="nx">rot180</span><span class="p">(</span><span class="nx">p</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">below</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span><span class="nx">p2</span><span class="p">){</span>
+  <span class="k">return</span> <span class="nx">rot270</span><span class="p">(</span><span class="nx">beside</span><span class="p">(</span><span class="nx">rot</span><span class="p">(</span><span class="nx">p1</span><span class="p">),</span>
+                       <span class="nx">rot</span><span class="p">(</span><span class="nx">p2</span><span class="p">)));</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              22/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>More Complex Combinations (1)</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">square_of_four</span><span class="p">(</span><span class="nx">tl</span><span class="p">,</span><span class="nx">tr</span><span class="p">,</span><span class="nx">bl</span><span class="p">,</span><span class="nx">br</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">p</span><span class="p">){</span>
+    <span class="kd">var</span> <span class="nx">top</span> <span class="o">=</span> <span class="nx">beside</span><span class="p">(</span><span class="nx">tl</span><span class="p">(</span><span class="nx">p</span><span class="p">),</span>
+                     <span class="nx">tr</span><span class="p">(</span><span class="nx">p</span><span class="p">));</span>
+    <span class="kd">var</span> <span class="nx">bottom</span> <span class="o">=</span> <span class="nx">beside</span><span class="p">(</span><span class="nx">bl</span><span class="p">(</span><span class="nx">p</span><span class="p">),</span>
+                        <span class="nx">br</span><span class="p">(</span><span class="nx">p</span><span class="p">));</span>
+    <span class="k">return</span> <span class="nx">below</span><span class="p">(</span><span class="nx">bottom</span><span class="p">,</span><span class="nx">top</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">right_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">n</span><span class="p">){</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">p</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">smaller</span> <span class="o">=</span> <span class="nx">right_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">beside</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">below</span><span class="p">(</span><span class="nx">smaller</span><span class="p">,</span><span class="nx">smaller</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              23/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>More Complex Combinations (2)</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">corner_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="nx">p</span><span class="p">;</span> <span class="p">};</span>
+  <span class="kd">var</span> <span class="nx">up</span> <span class="o">=</span> <span class="nx">up_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">right_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">tl</span> <span class="o">=</span> <span class="nx">beside</span><span class="p">(</span><span class="nx">up</span><span class="p">,</span><span class="nx">up</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">br</span> <span class="o">=</span> <span class="nx">below</span><span class="p">(</span><span class="nx">right</span><span class="p">,</span><span class="nx">right</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">corner</span> <span class="o">=</span> <span class="nx">corner_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">beside</span><span class="p">(</span><span class="nx">below</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">tl</span><span class="p">),</span>
+                <span class="nx">below</span><span class="p">(</span><span class="nx">br</span><span class="p">,</span><span class="nx">corner</span><span class="p">));</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">up_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">n</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">p</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="kd">var</span> <span class="nx">smaller</span> <span class="o">=</span> <span class="nx">right_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">n</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+  <span class="k">return</span> <span class="nx">below</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">beside</span><span class="p">(</span><span class="nx">smaller</span><span class="p">,</span><span class="nx">smaller</span><span class="p">));</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              24/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Building our vocabulary - Vectors</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">make_vec</span><span class="p">(</span><span class="nx">x</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">x</span><span class="o">:</span> <span class="nx">x</span><span class="p">,</span>
+    <span class="nx">y</span><span class="o">:</span> <span class="nx">y</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">make_seg</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="nx">v2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">{</span>
+    <span class="nx">start</span><span class="o">:</span> <span class="nx">v1</span><span class="p">,</span>
+    <span class="nx">end</span><span class="o">:</span> <span class="nx">v2</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">add_vec</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="nx">v2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">make_vec</span><span class="p">(</span><span class="nx">v1</span><span class="p">.</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">v2</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span>
+                  <span class="nx">v1</span><span class="p">.</span><span class="nx">y</span> <span class="o">+</span> <span class="nx">v2</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">sub_vec</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="nx">v2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">make_vec</span><span class="p">(</span><span class="nx">v1</span><span class="p">.</span><span class="nx">x</span> <span class="o">-</span> <span class="nx">v2</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span>
+                  <span class="nx">v1</span><span class="p">.</span><span class="nx">y</span> <span class="o">-</span> <span class="nx">v2</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">function</span> <span class="nx">scale_vec</span><span class="p">(</span><span class="nx">v</span><span class="p">,</span><span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">make_vec</span><span class="p">(</span><span class="nx">v</span><span class="p">.</span><span class="nx">x</span> <span class="o">*</span> <span class="nx">s</span><span class="p">,</span> <span class="nx">v</span><span class="p">.</span><span class="nx">y</span> <span class="o">*</span> <span class="nx">s</span><span class="p">);</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              25/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>More vocab, paths</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="c1">// veclist -&gt; segment_list</span>
+<span class="kd">function</span> <span class="nx">path</span><span class="p">(</span><span class="nx">veclist</span><span class="p">)</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">seglist</span> <span class="o">=</span> <span class="p">[];</span>
+  <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span> <span class="nx">i</span><span class="o">&lt;</span><span class="nx">veclist</span><span class="p">.</span><span class="nx">length</span><span class="o">-</span><span class="mi">1</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">seglist</span><span class="p">.</span><span class="nx">push</span><span class="p">(</span><span class="nx">make_seg</span><span class="p">(</span><span class="nx">veclist</span><span class="p">[</span><span class="nx">i</span><span class="p">],</span>
+                          <span class="nx">veclist</span><span class="p">[</span><span class="nx">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]));</span>
+  <span class="p">}</span>
+  <span class="k">return</span> <span class="nx">seglist</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              26/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>We still have not drawn anything!</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              27/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Drawing lines</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">draw_line</span><span class="p">(</span><span class="nx">v1</span><span class="p">,</span><span class="nx">v2</span><span class="p">,</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="nx">v1</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">v1</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">lineTo</span><span class="p">(</span><span class="nx">v2</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">v2</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">strokeStyle</span> <span class="o">=</span> <span class="s2">&quot;#000&quot;</span><span class="p">;</span>
+  <span class="nx">context</span><span class="p">.</span><span class="nx">stroke</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              28/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Data is code, Code is data</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              29/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What is a picture?</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              30/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>A picture paints itself?</h1></header>
+            
+            
+            <section><p>A picture is a function that takes a "frame" as an argument and draws itself inside it.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              31/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What is a frame?</h1></header>
+            
+            
+            <section><p><img src="file:///Users/tomh/Dropbox/projects/js-escher/frame.gif" /></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              32/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Our first picture</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="c1">// segment_list is a list of segments in the unit square.</span>
+<span class="kd">function</span> <span class="nx">segment_painter</span> <span class="p">(</span><span class="nx">segment_list</span><span class="p">,</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">frame</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="nx">index</span> <span class="k">in</span> <span class="nx">segment_list</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">draw_line</span><span class="p">(</span><span class="nx">frame_coord_map</span><span class="p">(</span><span class="nx">frame</span><span class="p">)(</span><span class="nx">segment_list</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">start</span><span class="p">),</span>
+                <span class="nx">frame_coord_map</span><span class="p">(</span><span class="nx">frame</span><span class="p">)(</span><span class="nx">segment_list</span><span class="p">[</span><span class="nx">index</span><span class="p">].</span><span class="nx">end</span><span class="p">),</span>
+                <span class="nx">context</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              33/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>What is frame_coord_map doing?</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">frame_coord_map</span> <span class="p">(</span><span class="nx">frame</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nx">add_vec</span><span class="p">(</span><span class="nx">frame</span><span class="p">.</span><span class="nx">origin</span><span class="p">,</span>
+                   <span class="nx">add_vec</span><span class="p">(</span><span class="nx">scale_vec</span><span class="p">(</span><span class="nx">frame</span><span class="p">.</span><span class="nx">e1</span><span class="p">,</span><span class="nx">v</span><span class="p">.</span><span class="nx">x</span><span class="p">),</span>
+                           <span class="nx">scale_vec</span><span class="p">(</span><span class="nx">frame</span><span class="p">.</span><span class="nx">e2</span><span class="p">,</span><span class="nx">v</span><span class="p">.</span><span class="nx">y</span><span class="p">)));</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              34/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Building George</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="nx">george_path</span> <span class="o">=</span> <span class="nx">path</span><span class="p">([</span><span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.42857143</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.42857143</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.42857143</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.2857143</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.2857143</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.42857143</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5714286</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.71428573</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.71428573</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5714286</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5714286</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.71428573</span><span class="p">,</span> <span class="mf">0.6</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.71428573</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.85714287</span><span class="p">,</span> <span class="mf">0.7</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.85714287</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5714286</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5714286</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.71428573</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5714286</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.42857143</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.2857143</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.42857143</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">),</span>
+                    <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.42857143</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">)]);</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              35/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Drawing him</h1></header>
+            
+            
+            <section><p><canvas id="drawing_him" width="600" height="600"></canvas>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              36/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>The Code</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">canvas_frame</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;drawing_him&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas_frame</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">george</span> <span class="o">=</span> <span class="nx">segment_painter</span><span class="p">(</span><span class="nx">george_path</span><span class="p">,</span><span class="nx">context</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">frame1</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="nx">origin</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span>
+     <span class="nx">e1</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span>
+     <span class="nx">e2</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+   <span class="p">};</span>
+   <span class="kd">var</span> <span class="nx">frame2</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="nx">origin</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span>
+     <span class="nx">e1</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+     <span class="nx">e2</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+   <span class="p">};</span>
+
+   <span class="nx">george</span><span class="p">(</span><span class="nx">frame2</span><span class="p">);</span>
+   <span class="nx">george</span><span class="p">(</span><span class="nx">frame1</span><span class="p">);</span>
+   <span class="nx">segment_painter</span><span class="p">(</span><span class="nx">box</span><span class="p">,</span><span class="nx">context</span><span class="p">)(</span><span class="nx">frame1</span><span class="p">);</span>
+   <span class="nx">segment_painter</span><span class="p">(</span><span class="nx">box</span><span class="p">,</span><span class="nx">context</span><span class="p">)(</span><span class="nx">frame2</span><span class="p">);</span>
+ <span class="p">})();</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              37/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Box</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">var</span> <span class="nx">BL</span> <span class="o">=</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">BR</span> <span class="o">=</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">TL</span> <span class="o">=</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">TR</span> <span class="o">=</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">box</span> <span class="o">=</span> <span class="p">[</span><span class="nx">make_seg</span><span class="p">(</span><span class="nx">BL</span><span class="p">,</span><span class="nx">BR</span><span class="p">),</span>
+           <span class="nx">make_seg</span><span class="p">(</span><span class="nx">BR</span><span class="p">,</span><span class="nx">TR</span><span class="p">),</span>
+           <span class="nx">make_seg</span><span class="p">(</span><span class="nx">TR</span><span class="p">,</span><span class="nx">TL</span><span class="p">),</span>
+           <span class="nx">make_seg</span><span class="p">(</span><span class="nx">TL</span><span class="p">,</span><span class="nx">BL</span><span class="p">)];</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              38/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Making new pictures from old</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">transform_picture</span> <span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">origin</span><span class="p">,</span> <span class="nx">e1</span><span class="p">,</span> <span class="nx">e2</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">frame</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">map</span> <span class="o">=</span> <span class="nx">frame_coord_map</span><span class="p">(</span><span class="nx">frame</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">new_origin</span> <span class="o">=</span> <span class="nx">map</span><span class="p">(</span><span class="nx">origin</span><span class="p">);</span>
+    <span class="nx">p</span><span class="p">({</span><span class="nx">origin</span><span class="o">:</span> <span class="nx">new_origin</span><span class="p">,</span>
+       <span class="nx">e1</span><span class="o">:</span> <span class="nx">sub_vec</span><span class="p">(</span><span class="nx">map</span><span class="p">(</span><span class="nx">e1</span><span class="p">),</span><span class="nx">new_origin</span><span class="p">),</span>
+       <span class="nx">e2</span><span class="o">:</span> <span class="nx">sub_vec</span><span class="p">(</span><span class="nx">map</span><span class="p">(</span><span class="nx">e2</span><span class="p">),</span><span class="nx">new_origin</span><span class="p">)</span>
+      <span class="p">});</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              39/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Flips and Rots</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">flip_vert</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">transform_picture</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">flip_horiz</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">transform_picture</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+<span class="p">};</span>
+
+<span class="kd">function</span> <span class="nx">rot</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nx">transform_picture</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+                           <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">));</span>
+<span class="p">};</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              40/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Beside</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">beside</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span><span class="nx">p2</span><span class="p">){</span>
+  <span class="kd">var</span> <span class="nx">split</span> <span class="o">=</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+  <span class="kd">var</span> <span class="nx">left</span> <span class="o">=</span> <span class="nx">transform_picture</span><span class="p">(</span><span class="nx">p1</span><span class="p">,</span>
+                               <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                               <span class="nx">split</span><span class="p">,</span>
+                               <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+  <span class="kd">var</span> <span class="nx">right</span> <span class="o">=</span> <span class="nx">transform_picture</span><span class="p">(</span><span class="nx">p2</span><span class="p">,</span>
+                                <span class="nx">split</span><span class="p">,</span>
+                                <span class="nx">make_vec</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+                                <span class="nx">make_vec</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">1</span><span class="p">));</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">frame</span><span class="p">){</span>
+    <span class="nx">left</span><span class="p">(</span><span class="nx">frame</span><span class="p">);</span>
+    <span class="nx">right</span><span class="p">(</span><span class="nx">frame</span><span class="p">);</span>
+  <span class="p">};</span>
+<span class="p">}</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              41/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Making Square Limit</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              42/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Tile T</h1></header>
+            
+            
+            <section><p><canvas id="tile_t" width="600" height="600"></canvas>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              43/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Square Limit</h1></header>
+            
+            
+            <section><p><canvas id="square_limit" width="600" height="600"></canvas>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              44/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>The Code</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">canvas_frame</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;square_limit&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas_frame</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+
+   <span class="kd">function</span> <span class="nx">square_limit</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">n</span><span class="p">)</span> <span class="p">{</span>
+     <span class="kd">var</span> <span class="nx">combine_four</span> <span class="o">=</span> <span class="nx">square_of_four</span><span class="p">(</span><span class="nx">flip_horiz</span><span class="p">,</span><span class="nx">identity</span><span class="p">,</span>
+                                       <span class="nx">rot180</span><span class="p">,</span><span class="nx">flip_vert</span><span class="p">);</span>
+     <span class="k">return</span> <span class="nx">combine_four</span><span class="p">(</span><span class="nx">corner_split</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">n</span><span class="p">));</span>
+   <span class="p">};</span>
+
+   <span class="kd">var</span> <span class="nx">p_painter</span> <span class="o">=</span> <span class="nx">segment_painter</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span><span class="nx">context</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">q_painter</span> <span class="o">=</span> <span class="nx">segment_painter</span><span class="p">(</span><span class="nx">q</span><span class="p">,</span><span class="nx">context</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">r_painter</span> <span class="o">=</span> <span class="nx">segment_painter</span><span class="p">(</span><span class="nx">r</span><span class="p">,</span><span class="nx">context</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">s_painter</span> <span class="o">=</span> <span class="nx">segment_painter</span><span class="p">(</span><span class="nx">s</span><span class="p">,</span><span class="nx">context</span><span class="p">);</span>
+
+   <span class="kd">var</span> <span class="nx">t</span> <span class="o">=</span> <span class="nx">quartet</span><span class="p">(</span><span class="nx">p_painter</span><span class="p">,</span><span class="nx">q_painter</span><span class="p">,</span><span class="nx">r_painter</span><span class="p">,</span><span class="nx">s_painter</span><span class="p">);</span>
+
+   <span class="nx">square_limit</span><span class="p">(</span><span class="nx">t</span><span class="p">,</span><span class="mi">1</span><span class="p">)(</span><span class="nx">frame1</span><span class="p">);</span>
+<span class="p">})();</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              45/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Playground</h1></header>
+            
+            
+            <section><p><canvas id="playground" width="600" height="600"></canvas>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              46/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>But Canvas lets you draw images anyway!</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              47/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>A different picture type</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="kd">function</span> <span class="nx">image_painter</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">context</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="kd">function</span><span class="p">(</span><span class="nx">frame</span><span class="p">){</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">translate</span><span class="p">(</span><span class="nx">frame</span><span class="p">.</span><span class="nx">origin</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span>
+                      <span class="nx">frame</span><span class="p">.</span><span class="nx">origin</span><span class="p">.</span><span class="nx">y</span><span class="p">);</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">transform</span><span class="p">(</span><span class="nx">frame</span><span class="p">.</span><span class="nx">e1</span><span class="p">.</span><span class="nx">x</span><span class="o">/</span><span class="nx">image</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span>
+                      <span class="nx">frame</span><span class="p">.</span><span class="nx">e1</span><span class="p">.</span><span class="nx">y</span><span class="o">/</span><span class="nx">image</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span>
+                      <span class="nx">frame</span><span class="p">.</span><span class="nx">e2</span><span class="p">.</span><span class="nx">x</span><span class="o">/</span><span class="nx">image</span><span class="p">.</span><span class="nx">width</span><span class="p">,</span>
+                      <span class="nx">frame</span><span class="p">.</span><span class="nx">e2</span><span class="p">.</span><span class="nx">y</span><span class="o">/</span><span class="nx">image</span><span class="p">.</span><span class="nx">height</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">,</span>
+                      <span class="mi">0</span><span class="p">);</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+    <span class="nx">context</span><span class="p">.</span><span class="nx">restore</span><span class="p">();</span>
+  <span class="p">};</span>
+<span class="p">};</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              48/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Drawing An Image</h1></header>
+            
+            
+            <section><p><canvas id="drawing_an_image" width="600" height="600"></canvas>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              49/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>The Code</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">canvas_frame</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;drawing_an_image&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas_frame</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">frame1</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="nx">origin</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span>
+     <span class="nx">e1</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">300</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span>
+     <span class="nx">e2</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">150</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+   <span class="p">};</span>
+   <span class="kd">var</span> <span class="nx">frame2</span> <span class="o">=</span> <span class="p">{</span>
+     <span class="nx">origin</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">50</span><span class="p">),</span>
+     <span class="nx">e1</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">),</span>
+     <span class="nx">e2</span><span class="o">:</span> <span class="nx">make_vec</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
+   <span class="p">};</span>
+   <span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+   <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;man.gif&#39;</span><span class="p">;</span>
+   <span class="nx">image</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nx">image_painter</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">context</span><span class="p">)(</span><span class="nx">frame2</span><span class="p">);</span>
+     <span class="nx">image_painter</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">context</span><span class="p">)(</span><span class="nx">frame1</span><span class="p">);</span>
+   <span class="p">};</span>
+ <span class="p">})();</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              50/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Escher's Angels</h1></header>
+            
+            
+            <section><p><canvas id="eschers_angels" width="600" height="600"></canvas>
+</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              51/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Code</h1></header>
+            
+            
+            <section><div class="highlight"><pre><span class="c1">//eschers_angels.js</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+   <span class="kd">var</span> <span class="nx">canvas_frame</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;eschers_angels&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">context</span> <span class="o">=</span> <span class="nx">canvas_frame</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s1">&#39;2d&#39;</span><span class="p">);</span>
+   <span class="kd">var</span> <span class="nx">image</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Image</span><span class="p">();</span>
+   <span class="nx">image</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="s1">&#39;angels.jpg&#39;</span><span class="p">;</span>
+   <span class="nx">image</span><span class="p">.</span><span class="nx">onload</span> <span class="o">=</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+     <span class="kd">var</span> <span class="nx">angels</span> <span class="o">=</span> <span class="nx">image_painter</span><span class="p">(</span><span class="nx">image</span><span class="p">,</span><span class="nx">context</span><span class="p">);</span>
+     <span class="kd">var</span> <span class="nx">two</span> <span class="o">=</span> <span class="nx">below</span><span class="p">(</span><span class="nx">angels</span><span class="p">,</span><span class="nx">angels</span><span class="p">);</span>
+     <span class="kd">var</span> <span class="nx">four</span> <span class="o">=</span> <span class="nx">below</span><span class="p">(</span><span class="nx">two</span><span class="p">,</span> <span class="nx">two</span><span class="p">);</span>
+     <span class="kd">var</span> <span class="nx">part</span> <span class="o">=</span> <span class="nx">flip_horiz</span><span class="p">(</span><span class="nx">right_split</span><span class="p">(</span><span class="nx">four</span><span class="p">,</span><span class="mi">3</span><span class="p">));</span>
+     <span class="nx">beside</span><span class="p">(</span><span class="nx">part</span><span class="p">,</span><span class="nx">flip_horiz</span><span class="p">(</span><span class="nx">part</span><span class="p">))(</span><span class="nx">frame1</span><span class="p">);</span>
+   <span class="p">};</span>
+ <span class="p">})();</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              52/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>What Next?</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              53/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Links - javascript</h1></header>
+            
+            
+            <section><ul>
+<li><a href="http://brendaneich.com/tag/history/">http://brendaneich.com/tag/history/</a></li>
+<li><a href="http://www.amazon.co.uk/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742">http://www.amazon.co.uk/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742</a></li>
+<li><a href="http://developer.yahoo.com/yui/theater/video.php?v=crockonjs-3">http://developer.yahoo.com/yui/theater/video.php?v=crockonjs-3</a> </li>
+<li><a href="http://www.slideshare.net/tmont/introduction-to-functional-programming-in-javascript">http://www.slideshare.net/tmont/introduction-to-functional-programming-in-javascript</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              54/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Links - Escher</h1></header>
+            
+            
+            <section><ul>
+<li><a href="http://www.ecs.soton.ac.uk/~ph/funcgeo.pdf">http://www.ecs.soton.ac.uk/~ph/funcgeo.pdf</a></li>
+<li><a href="http://www.ecs.soton.ac.uk/~ph/papers/funcgeo2.pdf">http://www.ecs.soton.ac.uk/~ph/papers/funcgeo2.pdf</a></li>
+<li><a href="http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-15.html#%_sec_2.2.4">http://mitpress.mit.edu/sicp/full-text/book/book-Z-H-15.html#%_sec_2.2.4</a></li>
+<li><a href="http://www.frank-buss.de/lisp/functional.html">http://www.frank-buss.de/lisp/functional.html</a></li>
+<li><a href="http://portal.acm.org/citation.cfm?id=1858597&amp;dl=ACM&amp;coll=DL">http://portal.acm.org/citation.cfm?id=1858597&amp;dl=ACM&amp;coll=DL</a></li>
+<li><a href="http://edison.suu.edu/~grady/functional-javascript/index.html">http://edison.suu.edu/~grady/functional-javascript/index.html</a></li>
+<li><a href="http://www.cs.ox.ac.uk/geomlab/home.html">http://www.cs.ox.ac.uk/geomlab/home.html</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              55/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Links - Canvas</h1></header>
+            
+            
+            <section><ul>
+<li><a href="http://diveintohtml5.org/canvas.html">http://diveintohtml5.org/canvas.html</a></li>
+<li><a href="https://developer.mozilla.org/en/Canvas_tutorial/Transformations#Transforms">https://developer.mozilla.org/en/Canvas_tutorial/Transformations#Transforms</a></li>
+<li><a href="http://www.html5canvastutorials.com/advanced/html5-canvas-invert-image-colors-tutorial/">http://www.html5canvastutorials.com/advanced/html5-canvas-invert-image-colors-tutorial/</a></li>
+<li><a href="http://mezzoblue.github.com/PaintbrushJS/demo/index.html">http://mezzoblue.github.com/PaintbrushJS/demo/index.html</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              56/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Slideshow</h1></header>
+            
+            
+            <section><ul>
+<li><a href="https://github.com/adamzap/landslide">https://github.com/adamzap/landslide</a></li>
+<li><a href="http://slides.html5rocks.com/">http://slides.html5rocks.com/</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              57/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Q's?</h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              58/58
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">javascript == scheme</a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">JS: The Best Parts</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">JavaScript == Scheme</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">JavaScript !== scheme</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">On JavaScript</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">With good functions, you dont need much else</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">You don't need: Classes</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">You don't need: Inheritance</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">You don't need: Variables</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">You don't need: Numbers</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">One,Two,Three</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Onwards to rationals, complex, negatives, arithmetic</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">You can implement objects and arrays too</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">You don't need: Recursion</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Closures</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">The Canonical Closure</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Higher Order Functions</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Creating A Language Of Pictures</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">How to describe Escher?</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-20">
+        <th><a href="#slide20">Combining Pictures</a></th>
+        <td><a href="#slide20">20</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-21">
+        <th><a href="#slide21">The Code</a></th>
+        <td><a href="#slide21">21</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-22">
+        <th><a href="#slide22">Some Transformations</a></th>
+        <td><a href="#slide22">22</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-23">
+        <th><a href="#slide23">More Complex Combinations (1)</a></th>
+        <td><a href="#slide23">23</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-24">
+        <th><a href="#slide24">More Complex Combinations (2)</a></th>
+        <td><a href="#slide24">24</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-25">
+        <th><a href="#slide25">Building our vocabulary - Vectors</a></th>
+        <td><a href="#slide25">25</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-26">
+        <th><a href="#slide26">More vocab, paths</a></th>
+        <td><a href="#slide26">26</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-27">
+        <th><a href="#slide27">We still have not drawn anything!</a></th>
+        <td><a href="#slide27">27</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-28">
+        <th><a href="#slide28">Drawing lines</a></th>
+        <td><a href="#slide28">28</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-29">
+        <th><a href="#slide29">Data is code, Code is data</a></th>
+        <td><a href="#slide29">29</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-30">
+        <th><a href="#slide30">What is a picture?</a></th>
+        <td><a href="#slide30">30</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-31">
+        <th><a href="#slide31">A picture paints itself?</a></th>
+        <td><a href="#slide31">31</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-32">
+        <th><a href="#slide32">What is a frame?</a></th>
+        <td><a href="#slide32">32</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-33">
+        <th><a href="#slide33">Our first picture</a></th>
+        <td><a href="#slide33">33</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-34">
+        <th><a href="#slide34">What is frame_coord_map doing?</a></th>
+        <td><a href="#slide34">34</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-35">
+        <th><a href="#slide35">Building George</a></th>
+        <td><a href="#slide35">35</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-36">
+        <th><a href="#slide36">Drawing him</a></th>
+        <td><a href="#slide36">36</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-37">
+        <th><a href="#slide37">The Code</a></th>
+        <td><a href="#slide37">37</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-38">
+        <th><a href="#slide38">Box</a></th>
+        <td><a href="#slide38">38</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-39">
+        <th><a href="#slide39">Making new pictures from old</a></th>
+        <td><a href="#slide39">39</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-40">
+        <th><a href="#slide40">Flips and Rots</a></th>
+        <td><a href="#slide40">40</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-41">
+        <th><a href="#slide41">Beside</a></th>
+        <td><a href="#slide41">41</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-42">
+        <th><a href="#slide42">Making Square Limit</a></th>
+        <td><a href="#slide42">42</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-43">
+        <th><a href="#slide43">Tile T</a></th>
+        <td><a href="#slide43">43</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-44">
+        <th><a href="#slide44">Square Limit</a></th>
+        <td><a href="#slide44">44</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-45">
+        <th><a href="#slide45">The Code</a></th>
+        <td><a href="#slide45">45</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-46">
+        <th><a href="#slide46">Playground</a></th>
+        <td><a href="#slide46">46</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-47">
+        <th><a href="#slide47">But Canvas lets you draw images anyway!</a></th>
+        <td><a href="#slide47">47</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-48">
+        <th><a href="#slide48">A different picture type</a></th>
+        <td><a href="#slide48">48</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-49">
+        <th><a href="#slide49">Drawing An Image</a></th>
+        <td><a href="#slide49">49</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-50">
+        <th><a href="#slide50">The Code</a></th>
+        <td><a href="#slide50">50</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-51">
+        <th><a href="#slide51">Escher's Angels</a></th>
+        <td><a href="#slide51">51</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-52">
+        <th><a href="#slide52">Code</a></th>
+        <td><a href="#slide52">52</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-53">
+        <th><a href="#slide53">What Next?</a></th>
+        <td><a href="#slide53">53</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-54">
+        <th><a href="#slide54">Links - javascript</a></th>
+        <td><a href="#slide54">54</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-55">
+        <th><a href="#slide55">Links - Escher</a></th>
+        <td><a href="#slide55">55</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-56">
+        <th><a href="#slide56">Links - Canvas</a></th>
+        <td><a href="#slide56">56</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-57">
+        <th><a href="#slide57">Slideshow</a></th>
+        <td><a href="#slide57">57</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-58">
+        <th><a href="#slide58">Q's?</a></th>
+        <td><a href="#slide58">58</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+  <script language="javascript" src="escher.js"></script>
+<script language="javascript" src="combining_pictures.js"></script>
+<script language="javascript" src="drawing_him.js"></script>
+<script language="javascript" src="tile_t.js"></script>
+<script language="javascript" src="drawing_an_image.js"></script>
+<script language="javascript" src="eschers_angels.js"></script>
+<script language="javascript" src="square_limit.js"></script>
+</body>
+</html>
